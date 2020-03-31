@@ -5,40 +5,22 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { rhythm, scale } from "../utils/typography";
 
-function BlogPostTemplate({ data, pageContext: { previous, next }, location }) {
+function HowToPostTemplate({
+  data,
+  pageContext: { previous, next },
+  location,
+}) {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const slug = post.fields.slug.slice(1, post.fields.slug.length - 1);
-  const editUrl = `https://github.com/excalidraw/excalidraw-blog/edit/master/content/blog/${slug}/index.md`;
+  const editUrl = `https://github.com/excalidraw/excalidraw-howto/edit/master/content/howto/${slug}/index.md`;
   const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `https://blog.excalidraw.com${post.fields.slug}`
+    `https://howto.excalidraw.com${post.fields.slug}`
   )}`;
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title={post.frontmatter.title} description={post.excerpt} />
-      <h1
-        style={{
-          marginTop: rhythm(1),
-          marginBottom: 0,
-        }}
-      >
-        {post.frontmatter.title}
-      </h1>
-      <p
-        style={{
-          ...scale(-1 / 5),
-          marginBottom: rhythm(1),
-          fontFamily: "var(--ui-font)",
-        }}
-      >
-        {post.frontmatter.date}
-        {post.frontmatter.note ? (
-          <>
-            {" • "}
-            <span dangerouslySetInnerHTML={{ __html: post.frontmatter.note }} />
-          </>
-        ) : null}
-      </p>
+      <h1>{post.frontmatter.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <p style={{ fontFamily: "var(--ui-font)", marginBottom: 0 }}>
         <a href={discussUrl}>Discuss on Twitter</a>
@@ -82,10 +64,10 @@ function BlogPostTemplate({ data, pageContext: { previous, next }, location }) {
   );
 }
 
-export default BlogPostTemplate;
+export default HowToPostTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query HowToPostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -97,8 +79,6 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
-        note
       }
       fields {
         slug

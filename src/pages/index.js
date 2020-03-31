@@ -5,13 +5,13 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { rhythm } from "../utils/typography";
 
-function BlogIndex({ data, location }) {
+function HowToIndex({ data, location }) {
   const posts = data.allMarkdownRemark.edges;
   const title = data.site.siteMetadata.title;
 
   return (
     <Layout location={location} title={title}>
-      <SEO title="All posts" />
+      <SEO />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (
@@ -21,15 +21,10 @@ function BlogIndex({ data, location }) {
                 marginBottom: rhythm(1 / 4),
               }}
             >
-              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+              <Link style={{ boxShadow: "none" }} to={node.fields.slug}>
                 {title}
               </Link>
             </h3>
-            <p>
-              <strong>{node.frontmatter.date}</strong>
-              {" — "}
-              <span style={{ opacity: 0.75 }}>{node.excerpt}</span>
-            </p>
           </div>
         );
       })}
@@ -37,17 +32,17 @@ function BlogIndex({ data, location }) {
   );
 }
 
-export default BlogIndex;
+export default HowToIndex;
 
 export const pageQuery = graphql`
-  query BlogIndex {
+  query HowToIndex {
     site {
       siteMetadata {
         title
         description
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___title] }) {
       edges {
         node {
           excerpt
@@ -55,7 +50,6 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             title
           }
         }

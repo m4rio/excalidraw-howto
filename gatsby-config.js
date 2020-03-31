@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: "Excalidraw Blog",
+    title: "Excalidraw How To",
     author: "Christopher Chedeau",
     description:
       "Excalidraw is a whiteboard tool that lets you easily sketch diagrams that have a hand-drawn feel to them.",
-    siteUrl: "https://blog.excalidraw.com",
+    siteUrl: "https://howto.excalidraw.com",
     social: {
       twitter: "excalidraw",
       github: "excalidraw",
@@ -14,8 +14,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/content/blog`,
-        name: "blog",
+        path: `${__dirname}/content/howto`,
+        name: "howto",
       },
     },
     {
@@ -84,7 +84,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Excalidraw Blog",
+        name: "Excalidraw How To",
         short_name: "Excalidraw",
         start_url: "/",
         background_color: "#ffffff",

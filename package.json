@@ -51,7 +51,7 @@
       "prettier --write"
     ]
   },
-  "name": "excalidraw-blog",
+  "name": "excalidraw-howto",
   "private": true,
   "scripts": {
     "build": "gatsby build",
