@@ -16,7 +16,12 @@ function HowToIndex({ data, location }) {
         const title = node.frontmatter.title || node.fields.slug;
         return (
           <div key={node.fields.slug}>
-            <h3>
+            <h3
+              style={{
+                marginTop: rhythm(1),
+              }}
+            >
+              &mdash;{" "}
               <Link style={{ boxShadow: "none" }} to={node.fields.slug}>
                 {title}
               </Link>
