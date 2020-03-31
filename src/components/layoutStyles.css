@@ -39,3 +39,9 @@ p {
 body.dark a {
   color: var(--textLink);
 }
+
+th,
+td {
+  color: var(--textNormal);
+  border-bottom-color: var(--hr);
+}
