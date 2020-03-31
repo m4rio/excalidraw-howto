@@ -13,7 +13,9 @@ function HowToPostTemplate({
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const slug = post.fields.slug.slice(1, post.fields.slug.length - 1);
-  const editUrl = `https://github.com/excalidraw/excalidraw-howto/edit/master/content/howto/${slug}/index.md`;
+  const editUrl = `https://github.com/excalidraw/excalidraw-howto/edit/master/${post.fileAbsolutePath.substr(
+    post.fileAbsolutePath.indexOf("content/howto")
+  )}`;
   const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
     `https://howto.excalidraw.com${post.fields.slug}`
   )}`;
@@ -75,6 +77,7 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
+      fileAbsolutePath
       excerpt
       html
       frontmatter {
