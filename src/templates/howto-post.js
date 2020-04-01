@@ -77,9 +77,9 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      fileAbsolutePath
       excerpt
       html
+      fileAbsolutePath
       frontmatter {
         title
       }
