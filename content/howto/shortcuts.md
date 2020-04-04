@@ -33,8 +33,9 @@ title: Shortcuts
 
 ### View
 
-| Function   |  Mac   |    Other     |
-| ---------- | :----: | :----------: |
-| Zoom in    | **⌘+** | **Ctrl + +** |
-| Zoom out   | **⌘-** | **Ctrl + -** |
-| Zoom reset | **⌘0** | **Ctrl + 0** |
+| Function           |  Mac   |    Other     |
+| ------------------ | :----: | :----------: |
+| Zoom in            | **⌘+** | **Ctrl + +** |
+| Zoom out           | **⌘-** | **Ctrl + -** |
+| Zoom reset         | **⌘0** | **Ctrl + 0** |
+| Toggle full screen | **⌘F** |    **F**     |
