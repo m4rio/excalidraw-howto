@@ -9,4 +9,4 @@ We are using [Crowdin](https://crowdin.com/project/excalidraw) for our translati
 
 If you want to see [Excalidraw](https://excalidraw.com) in more languages and you can't find it on Crowdin, then [submit an issue](https://github.com/excalidraw/excalidraw/issues/new) and we'll add it there for you!
 
-[![Crowdin status](crowdin.png)](https://corowdin.com/project/excalidraw)
+[![Crowdin status](crowdin.png)](https://crowdin.com/project/excalidraw)
